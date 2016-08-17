@@ -1,0 +1,66 @@
+//Feb 20, 2013 NOTES
+
+//Write a function to return the number of even integers in a text file. The function recieves the file pointer (FILE *) as an argument
+
+int even (FILE *fp)
+{
+	int number;
+	int counter = 0;
+	if (fp == NULL) {printf ("...no file\n"); return;}
+		while (fscanf (fp, "%d", &number)
+		{
+			if (number % 2 == 0)
+			counter++;
+		}
+	return counter;
+}
+
+
+//Read from a binary file
+
+ret = fread (&x, sizeof (int), 1, infp);
+
+while ((ret = fread (hufter, sizeof (int), SIZE, fp)) > 0)
+{
+	for (i=0; i<ret; i++)
+		if (hufter[i] % 2 == 0)
+			counter++;
+}
+
+//Write a function to initialize array x of size SIZE with integers read from a text file. The function recieves the name of the file as an argument
+
+void init (char *name)
+{
+	FILE *fp;
+	int i;
+	fp = fopen (name, "r");
+	for (i=0; i<SIZE; i++)
+	{
+		if (fscanf (fp, "%d", &x[i]) < 1)
+		{
+			printf ("got %d numbers\n", i);
+			return;
+		}
+	}
+	fclose (fp);
+	return;
+}
+
+//Write a function to initialize array x of size SIZE with integers read from a binary file. The function recieves the name of the file as an argument.
+
+SIZE = 100;
+
+void init (char *name)
+{
+	FILE *fp;
+	int i;
+	int x[SIZE];
+	fp = fopen (name, "r"); fp = fopen (name, "rb)
+	for (i=0; i<SIZE; i++)
+	{
+		if (fread (x, sizeof (int), SIZE, fp) < 1)
+			printf ("error reading\n");
+	}
+	fclose (fp);
+	return;
+}

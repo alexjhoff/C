@@ -1,0 +1,121 @@
+Notes Mar 6
+
+fopen(...., "wb")
+
+fwrite(p,sizeof(NODE),1,fp);
+
+fopen(..., "rb");
+
+fread(&temp, sizeof(NODE), 1, fp);
+	printf("%s\t%s\n", temp->name, temp->phone);
+
+
+HW 8
+
+3.
+
+int main (void)
+{
+	for (i=0; i<5; i++)
+		ptread_create (&thr[i], NULL, init, (void *)i);
+
+}
+
+
+void init (void *arg)
+{
+	int id = (int)arg;
+	int SIZE = 20;
+	int my_start = id*SIZE;
+	int my_end = id*SIZE+SIZE;
+	
+	for(i=my_start; i<my_end; i++)
+		x[i] = i;
+}
+
+3. (if asks for sum)
+
+int sum = 0;
+
+int main (void)
+{
+        for (i=0; i<5; i++)
+                ptread_create (&thr[i], NULL, init, (void *)i);
+
+}
+
+
+void init (void *arg)
+{
+        int id = (int)arg;
+        int SIZE = 20;
+        int my_start = id*SIZE;
+        int my_end = id*SIZE+SIZE;
+
+        for(i=my_start; i<my_end; i++)
+        {	pthread_mutex_lock (&mutex);
+			sum += sum[i]
+		pthread_mutex_unlock (&mutex);
+	}
+}
+
+*******More Efficient *******
+
+void init (void *arg)
+{
+        int id = (int)arg;
+        int SIZE = 20;
+	int my_sum = 0;
+        int my_start = id*SIZE;
+        int my_end = id*SIZE+SIZE;
+
+        for(i=my_start; i<my_end; i++)
+        {
+		my_sum += x[i];
+        }
+	
+	pthread_mutex_lock (&mutex);
+		sum = sum + my_sum;
+	pthread_mutex_lock (&mutex);
+}
+
+
+
+4.
+
+void init(void *arg)
+{
+	int id = (int) arg;
+	int SIZE = 20;
+	int my_start = id * SIZE;
+	int my_end = id*SIZE+SIZE;
+
+	for (i = my_start; i < my_end; i++)
+		for(j = 0; j<100; j++)
+			x[i][j] = i+j;
+}
+
+
+2.
+
+void* thread_sum(void *id)
+{
+	long myid = (int)id;
+	int i;
+	double my_sum = 0;
+	double my_n = n / thread_count;
+	double first_i = my_n * myid;
+	double last_i = first_i + my_n - 1;
+	
+	if (first_i % 2 == 0)
+		factor = 1;
+	else
+		factor = -1;
+
+	for (i = first_i; i < last_i; i++, factor =- factor)
+		my_sum += factor / (2*i + 1);
+
+	pthread_mutex
+
+
+
