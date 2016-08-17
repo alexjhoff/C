@@ -1,0 +1,44 @@
+immigrants
+smoke
+blunts
+every
+day
+even
+sundays
+sundays
+even
+
+
+parity.c
+
+9 total words
+7 occur an odd number of times
+
+bincount.c
+
+    0 distinct words of length 1
+    0 distinct words of length 2
+    1 distinct words of length 3
+    1 distinct words of length 4
+    2 distinct words of length 5
+    1 distinct words of length 6
+    1 distinct words of length 7
+    0 distinct words of length 8
+    0 distinct words of length 9
+    1 distinct words of length 10
+    0 distinct words of length 11
+    0 distinct words of length 12
+    0 distinct words of length 13
+    0 distinct words of length 14
+    0 distinct words of length 15
+    0 distinct words of length 16
+    0 distinct words of length 17
+    0 distinct words of length 18
+    0 distinct words of length 19
+    0 distinct words of length 20
+
+In project 3 directory:
+	1) mkdir project3
+	2) cp table.c project3/
+	3) cp report.txt project3/
+	4) tar -cvf project3.tar project3
